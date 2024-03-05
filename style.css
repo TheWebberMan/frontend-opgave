@@ -1,0 +1,41 @@
+* {
+ box-sizing: border-box;
+ margin: 0;
+}
+
+.container {
+    margin: 0 10px;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+    height: 70px;
+    width: 100%;
+    justify-content: right;
+    list-style: none;
+    align-items: center;
+    color: white;
+    background-color: #6C7047;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    transform: scale(1.1);
+    transition: all;
+}
+
+.navli {
+    transform: translatex(-7em);
+}
+
+.navkontakt {
+    background-color: #EC9127;
+    padding: 9px 15px;
+    border-radius: 15px;
+}
+
