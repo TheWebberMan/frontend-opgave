@@ -7,11 +7,26 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js" defer></script>
+    <script
+        type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+            emailjs.init({
+            publicKey: 'bwn_WCU2WRS88pVkI',
+        });
+    </script>
+    <!-- SCRIPT FOR E-MAIL -->
     <script type="text/javascript">
-        (function() {
-            // You can find your personal code in: https://dashboard.emailjs.com/admin/account
-            emailjs.init('-0pESeksZVUuA_L7i');
-        })();
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // these IDs from the previous steps
+            emailjs.sendForm('contact_service', 'contact_form', this)
+                .then(() => {
+                    console.log('SUCCESS!');
+                }, (error) => {
+                    console.log('FAILED...', error);
+                });
+            });
+        }
     </script>
   </head>
 
@@ -93,25 +108,26 @@
       <div class="kontaktFormFlex">
       <h3>Kontakt os</h3>
       <p>Jespers Torvekøkken tilbyder en alsidig og fuldt fleksibel frokostordning, hvor du fra uge til uge selv kan skrue op og ned for antallet at kuverter.</p>
-      <form action="">
+      <form id="contact-form">
         <input class="formInput" placeholder="Navn" name="navn" type="text">
         <input class="formInput fit" placeholder="Email" name="email" type="text">
         <textarea class="formInputMessage" name="message" placeholder="Hvad har du på hjerte?" type="text"></textarea>
+        <input type="submit" value="Send">
       </form>
     </div>
     </div>
 
     <footer class="footer">
-<div class="footerKantTop"></div>
-<div class="footerIndhold">
-  <img src="https://i.ibb.co/q9LtHtq/jt-logo.png" style="width: 250px;" alt="">
-  <ul class="footerNav">
-    <a href=""><li>Dagens ret</li></a>
-    <a href=""><li>Menu</li></a>
-    <a href=""><li>Om os</li></a>
-    <a href=""><li>Kontakt</li></a>
-  </ul>
-  <div class="SoMeImg">
+        <div class="footerKantTop"></div>
+        <div class="footerIndhold">
+        <img src="https://i.ibb.co/q9LtHtq/jt-logo.png" style="width: 250px;" alt="">
+            <ul class="footerNav">
+            <a href=""><li>Dagens ret</li></a>
+            <a href=""><li>Menu</li></a>
+            <a href=""><li>Om os</li></a>
+            <a href=""><li>Kontakt</li></a>
+            </ul>
+        <div class="SoMeImg">
     <img src="" alt="Linkedin">
     <img src="" alt="Facebook">
     <img src="" alt="Instagram">
