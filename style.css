@@ -7,6 +7,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: #E9DDCE;
+    scroll-behavior: smooth;
 }
 
 main {
@@ -252,6 +253,7 @@ transform: translateY(70px);
     gap: 18em;
     justify-content: center;
     align-items: center;
+    margin-top: 150px;
 }
 
 .omOsTekst {
@@ -321,6 +323,7 @@ transform: translateY(70px);
 .kontaktOs {
 display: flex; 
 gap: 40px;
+margin: 150px 100px;
 }
 
 .kontaktImg {
@@ -341,11 +344,11 @@ gap: 40px;
     border-radius: 10px;
     width: 300px;
     height: 35px;
+    padding-left: 20px;
     display: inline;
 }
 
 .formInput::placeholder {
-padding-left: 20px;
 font-size: 15px;
 }
 
@@ -369,6 +372,29 @@ font-size: 15px;
 .fit {
     margin-left: 40px;
 }
+
+.submit {
+width: 100px;
+height: 30px;
+display: block;
+padding: 9px 15px 23px 15px;
+margin-top: 20px;
+border-radius: 15px;
+background-color: #EC9127;
+transition: transform 1s ease;
+border-style: none;
+cursor: pointer;
+color: white;
+font-weight: bold;
+
+}
+
+.submit:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
 
 footer {
     width: 100%;
@@ -406,7 +432,17 @@ footer {
 }
 
 .SoMeImg {
+display: flex; 
+gap: 30px;
+}
 
+.SoMeImgAni {
+    transition: transform 1s ease;
+}
+
+.SoMeImgAni:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
 }
 
 /* slideshow */
@@ -421,6 +457,99 @@ footer {
     display: none;
     width: 100%;
   }
+  
+  /* tabmenu */
+
+  .menu {
+margin: auto;
+  }
+
+  .tab {
+    overflow: hidden;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    height: 80px;
+  }
+  
+  .tab button {
+    background-color: #6C7047;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    width: 200px; 
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .tab button:hover {
+    background-color: #78796f;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .menu {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menutitle {
+    margin-top: 70px;
+  }
+
+  .containerFlex {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 40px;
+width:100%;
+  }
+
+  .menuflex {
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 90%;
+  }
+
+  
+  .tablinks {
+    background-color: #6C7047;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    width: 250px; 
+    height: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+
+  .vejrudsigt {
+    margin-bottom: 70px;
+  }
+
   
   
  

@@ -7,6 +7,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script
         type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
             emailjs.init({
@@ -34,10 +35,10 @@
     <nav class="stickynav"> 
         <ul class="nav">
           <img class="logo" src="https://i.ibb.co/q9LtHtq/jt-logo.png">
-          <a href="#"><li class="navli">Dagens ret</li></a>
-          <a href="#"><li class="navli">Menu</li></a>
-          <a href="#"><li class="navli">Om os</li></a>
-          <a href="#"><li class="navkontakt navli">Kontakt</li></a>
+          <a href="#dagensret"><li class="navli">Dagens ret</li></a>
+          <a href="#menu"><li class="navli">Menu</li></a>
+          <a href="#omos"><li class="navli">Om os</li></a>
+          <a href="#kontakt"><li class="navkontakt navli">Kontakt</li></a>
         </ul>
      </nav>
 
@@ -56,7 +57,7 @@
      <div class="kant"></div>
     </header>
 
-    <div class="dagensRet container">
+    <div id="dagensret" class="dagensRet container">
       <div class="slider">
         <div class="slides">
           <img class="DRimg" src="https://i.ibb.co/9r2Ppcp/pexels-alleksana-4224212-1.jpg" alt="Dish 1">
@@ -67,11 +68,11 @@
         </div>
       </div>
       <ul class="dagensRetTekst controls">
-        <li class="DRdag"> Mandag<p>Ramen Noodles med kureret gris, blødkogte æg og tilhørende grøntsager.</p><button onclick="showSlide(0)" class="DRknap">Se retten</button></li>
-        <li class="DRdag"> Tirsdag<p>Kylling i Karry med ris og stegte grøntsager.</p><button onclick="showSlide(1)" class="DRknap">Se retten</button></li>
-        <li class="DRdag"> Onsdag<p>Spaghetti Bolognese med revet parmesan.</p><button onclick="showSlide(2)" class="DRknap">Se retten</button></li>
-        <li class="DRdag"> Torsdag<p>Klassisk Lasagne med italiensk brød.</p><button onclick="showSlide(3)" class="DRknap">Se retten</button></li>
-        <li class="DRdag"> Fredag<p>Burger med hjemmeskåret friturestegte fritter og grønt.</p><button onclick="showSlide(4)" class="DRknap">Se retten</button></li>
+        <li class="DRdag"> Mandag <time style="display: inline; font-size: 17px; color: #414146;">d.3. marts</time><p>Ramen Noodles med kureret gris, blødkogte æg og tilhørende grøntsager.</p><button onclick="showSlide(0)" class="DRknap">Se retten</button></li>
+        <li class="DRdag"> Tirsdag <time style="display: inline; font-size: 17px; color: #414146;">d.4. marts</time><p>Kylling i Karry med ris og stegte grøntsager.</p><button onclick="showSlide(1)" class="DRknap">Se retten</button></li>
+        <li class="DRdag"> Onsdag <time style="display: inline; font-size: 17px; color: #414146;">d.5. marts</time><p>Spaghetti Bolognese med revet parmesan.</p><button onclick="showSlide(2)" class="DRknap">Se retten</button></li>
+        <li class="DRdag"> Torsdag <time style="display: inline; font-size: 17px; color: #414146;">d.6. marts</time><p>Klassisk Lasagne med italiensk brød.</p><button onclick="showSlide(3)" class="DRknap">Se retten</button></li>
+        <li class="DRdag"> Fredag <time style="display: inline; font-size: 17px; color: #414146;">d.7. marts</time><p>Burger med hjemmeskåret friturestegte fritter og grønt.</p><button onclick="showSlide(4)" class="DRknap">Se retten</button></li>
       </ul>
     </div>
 
@@ -86,12 +87,112 @@
       <div class="salatBarKantBund"></div>
     </div>
 
-    <div class="sortiment">
+    <div id="menu" class="menu container">
+      <h2 style="margin-bottom: 30px;"> SE VORES FASTE SORTIMENT</h2>
+      <div class="tab">
+        <button class="tablinks SoMeImgAni" onclick="openTab(event, 'lunch')">Frokost</button>
+        <button class="tablinks SoMeImgAni" onclick="openTab(event, 'breakfast')">Morgen</button>
+        <button class="tablinks SoMeImgAni" onclick="openTab(event, 'drinks')">Drikkelse</button>
+      </div>
+      
+      <div id="lunch" class="tabcontent">
+        <div class="containerFlex">
+         <h2 class="menutitle">Frokost</h2>
+         <ul class="menuflex">
+           <li>
+             <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/QrpqNqh/blinis-1000x1000.jpg" alt="Morgenmad 1">
+             <p>Blinis / 20.-</p>
+           </li>
+           <li>
+             <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/P9vMMVw/salatportion-1000x1000.jpg" alt="Morgenmad 1">
+             <p>Salater / 30.-</p>
+           </li>
+           <li>
+             <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/ZcHJMBN/kageraekker-624x663.jpg" alt="Morgenmad 1">
+             <p>Kagebord / 15.-</p>
+           </li>
+           <li>
+             <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/DCnBZkY/takeaway-1000x1000.jpg" alt="Morgenmad 1">
+             <p>Blandet frugt</p>
+           </li>
+           <li>
+             <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/qn8JPqS/pexels-brigitte-tohm-186859-1.jpg" alt="Morgenmad 1">
+             <p>Sandwiches / 40.-</p>
+           </li>
+           
+         </ul>
+        </div>
+       </div>
 
-      SORTIMENT HER
-    </div>
+      
+      <div id="breakfast" class="tabcontent" style="display:none;">
+       <div class="containerFlex">
+        <h2 class="menutitle">Morgenmad</h2>
+        <ul class="menuflex">
+          <li>
+            <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/M6qftKs/pexels-pixabay-158053-1.jpg" alt="Morgenmad 1">
+            <p>Friskpresset Juice / 40.-</p>
+          </li>
+          <li>
+            <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/FgMs66h/broedkurvv2-624x580.jpg" alt="Morgenmad 1">
+            <p>Brød m. pålæg / 20.-</p>
+          </li>
+          <li>
+            <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/r4N63pP/broed-kaffe-juice-624x663.jpg" alt="Morgenmad 1">
+            <p>Morgenbrød / 15.-</p>
+          </li>
+          <li>
+            <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/PzXYFxt/pexels-ovidiu-creanga-1495534.jpg" alt="Morgenmad 1">
+            <p>Cereal med yogurt / 20.-</p>
+          </li>
+          <li>
+            <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/7gXZ9VB/pexels-photo-216951.jpg" alt="Morgenmad 1">
+            <p>Cereal med mælk / 20.-</p>
+          </li>
+          
+        </ul>
+       </div>
+      </div>
+    
 
-    <div class="omOs">
+      <div id="drinks" class="tabcontent" style="display:none;">
+        <div class="containerFlex">
+         <h2 class="menutitle">Drikkevarer</h2>
+         <ul class="menuflex">
+           <li>
+             <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/Kxzfns2/574f5df7786335782fd9fa1c33524b00546dc236e87d213541b0cafb91087842.jpg" alt="Drikkelse 1">
+             <p>Faxe kondi <br> Free / 25.-</p>
+           </li>
+           <li>
+             <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/bPZRw3H/carlsberg-sport-50cl-droplets-1.jpg" alt="Drikkelse 2">
+             <p>Carlsberg sport <br> / 25.-</p>
+           </li>
+           <li>
+             <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/jzKvfsr/cc-0-5l-ew-pet-rgb.jpg" alt="Drikkelse 2">
+             <p>Coca Cola <br> / 25.-</p>
+           </li>
+           <li>
+             <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/hKjsRSZ/faxe-kondi-05l.jpg" alt="Drikkelse 3">
+             <p>Faxe kondi <br> / 20.-</p>
+           </li>
+           <li>
+             <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/RNJkYMK/pexels-photomix-company-103566-1.jpg" alt="Drikkelse 4">
+             <p>Smoothies / 30.-</p>
+           </li>
+           <li>
+            <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/gRfg9k9/cafe-1000x1000.jpg" alt="Drikkelse 5">
+            <p>Kaffe / 25.-</p>
+          </li>
+          <li>
+            <img style="height: 150px; border-radius: 20px;" src="https://i.ibb.co/30BfSDD/pexels-alex-azabache-3766257-1-1.jpg" alt="Drikkelse 5">
+            <p>Vand / 14.-</p>
+          </li>
+           
+         </ul>
+        </div>
+       </div>
+
+    <div id="omos" class="omOs">
       <div class="omOsTop"></div>
       <div class="omOsTekst">
         <h2>Om os</h2>
@@ -103,7 +204,7 @@
       <div class="omOsBund"></div>
     </div>
 
-    <div class="kontaktOs container">
+    <div id="kontakt" class="kontaktOs container">
       <img class="kontaktImg" src="https://i.ibb.co/N1HWHCN/03-person.jpg" alt="">
       <div class="kontaktFormFlex">
       <h3>Kontakt os</h3>
@@ -112,25 +213,73 @@
         <input class="formInput" placeholder="Navn" name="navn" type="text">
         <input class="formInput fit" placeholder="Email" name="email" type="text">
         <textarea class="formInputMessage" name="message" placeholder="Hvad har du på hjerte?" type="text"></textarea>
-        <input type="submit" value="Send">
+        <input class="submit" type="submit" value="Send">
       </form>
     </div>
     </div>
+
+    <button class="tablinks SoMeImgAni vejrudsigt" onclick="openTab(event, 'vejret')">Se vejrudsigten.. ¯\_(ツ)_/¯</button>
+    <div id="vejret" class="tabcontent" style="display: none;">
+      <div class="containerFlex">
+       <h2 class="">Vejrudsigt</h2>
+       
+       <div id="weather"></div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>sky</th>
+      <th>temperature</th>
+      <th>rain_mm</th>
+      <th>id</th>
+    </tr>
+  </thead>
+  <tbody id="tableRows"></tbody>
+</table>
+<script>
+  /* Mit eget forsøg - den viste alle ID'er.....
+  
+  fetch("https://65ddd3abdccfcd562f558d61.mockapi.io/api/v1/forecast/")
+  .then(response => response.json())
+  .then(res => {
+    let rows = '';
+    res.forEach(product => { 
+      rows += `<tr><td>${product.sky}</td><td>${product.temperature}</td><td>${product.rain_mm}</td><td>${product.id}</td></tr>`; // Access object properties directly
+    })
+    document.getElementById('tableRows').innerHTML = rows;
+  })
+  .catch(error => console.log(error)) */
+
+
+  // Rettelse fra ChatGPT til visning af 1 tilfældigt ID 
+  fetch("https://65ddd3abdccfcd562f558d61.mockapi.io/api/v1/forecast/")
+  .then(response => response.json())
+  .then(res => {
+    const randomIndex = Math.floor(Math.random() * res.length); // Select a random index from the array
+    const randomItem = res[randomIndex]; // Get the item at the random index
+    const { sky, temperature, rain_mm, id } = randomItem; // Destructure the properties of the random item
+    const row = `<tr><td>${sky}</td><td>${temperature}</td><td>${rain_mm}</td><td>${id}</td></tr>`;
+    document.getElementById('tableRows').innerHTML = row;
+  })
+  .catch(error => console.log(error))
+</script>
+      </div>
+     </div>
 
     <footer class="footer">
         <div class="footerKantTop"></div>
         <div class="footerIndhold">
         <img src="https://i.ibb.co/q9LtHtq/jt-logo.png" style="width: 250px;" alt="">
             <ul class="footerNav">
-            <a href=""><li>Dagens ret</li></a>
-            <a href=""><li>Menu</li></a>
-            <a href=""><li>Om os</li></a>
-            <a href=""><li>Kontakt</li></a>
+            <a href="#dagensret" class="SoMeImgAni"><li>Dagens ret</li></a>
+            <a href="#menu" class="SoMeImgAni"><li>Menu</li></a>
+            <a href="#omos" class="SoMeImgAni"><li>Om os</li></a>
+            <a href="#kontakt"  class="SoMeImgAni"><li>Kontakt</li></a>
             </ul>
         <div class="SoMeImg">
-    <img src="" alt="Linkedin">
-    <img src="" alt="Facebook">
-    <img src="" alt="Instagram">
+    <a class="SoMeImgAni" href=""><img src="https://i.ibb.co/R6zQ60s/Social-icon-2.png" alt="Linkedin"></a>
+    <a class="SoMeImgAni" href=""><img src="https://i.ibb.co/2SyJpM2/Social-icon.png" alt="Facebook"></a>
+    <a class="SoMeImgAni" href=""><img src="https://i.ibb.co/3W4gsVX/Social-icon-1.png" alt="Instagram"></a>
   </div>
 </div>
     </footer>

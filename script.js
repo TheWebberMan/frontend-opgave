@@ -30,7 +30,7 @@ function prevSlide() {
 }
 
 function startSlideShow() {
-  intervalId = setInterval(nextSlide, 4000);
+  intervalId = setInterval(nextSlide, 3000);
 }
 
 function stopSlideShow() {
@@ -46,7 +46,7 @@ document.querySelectorAll('.controls button').forEach(button => {
 
 function resetInterval() {
   stopSlideShow();
-  startSlideShow();
+  // startSlideShow();
 }
 
 
@@ -68,3 +68,32 @@ function resetInterval() {
 //     });
 //   })
 // }
+
+//Tab menu start
+
+function openTab(evt, tabName) {
+    
+    const isActive = document.getElementById(tabName).style.display === 'block';
+  
+    
+    const tabcontents = document.querySelectorAll('.tabcontent');
+    tabcontents.forEach(tabcontent => {
+      tabcontent.style.display = 'none';
+    });
+  
+    
+    const tablinks = document.querySelectorAll('.tablinks');
+    tablinks.forEach(tablink => {
+      tablink.classList.remove('active');
+    });
+  
+    
+    if (!isActive) {
+      document.getElementById(tabName).style.display = 'block';
+      evt.currentTarget.classList.add('active');
+    }
+  }
+
+  //Vejrudsigt
+
+  
