@@ -16,17 +16,108 @@
   </head>
 
   <body>
-    <header>
-     <nav>
-      <div>
+    <nav class="stickynav"> 
         <ul class="nav">
-          <a href=""><li class="navli">Dagens ret</li></a>
-          <a href=""><li class="navli">Menu</li></a>
-          <a href=""><li class="navli">Om os</li></a>
-          <a href=""><li class="navkontakt navli">Kontakt</li></a>
+          <img class="logo" src="https://i.ibb.co/q9LtHtq/jt-logo.png">
+          <a href="#"><li class="navli">Dagens ret</li></a>
+          <a href="#"><li class="navli">Menu</li></a>
+          <a href="#"><li class="navli">Om os</li></a>
+          <a href="#"><li class="navkontakt navli">Kontakt</li></a>
         </ul>
-      </div>
      </nav>
+
+     <main>
+
+    <header class="header">
+      <div class="headerindhold container">
+        <div class="headertekstflex">
+        <h1> Klar til en ny frokostordning?
+        </h1>
+        <p>Jespers Torvekøkken tilbyder en alsidig og fuldt fleksibel frokostordning, hvor du fra uge til uge selv kan skrue op og ned for antallet at kuverter.</p>
+        <a class="headerknap" href="#">Læs mere</a>
+      </div>
+        <img class="headerimg" src="https://i.ibb.co/55DPQr1/hero-graphic.png">
+      </div>
+     <div class="kant"></div>
     </header>
+
+    <div class="dagensRet container">
+      <div class="slider">
+        <div class="slides">
+          <img class="DRimg" src="https://i.ibb.co/9r2Ppcp/pexels-alleksana-4224212-1.jpg" alt="Dish 1">
+          <img class="DRimg" src="https://i.ibb.co/pxZWF5B/pexels-chait-goli-7353379-1.jpg" alt="Dish 2">
+          <img class="DRimg" src="https://i.ibb.co/6F5LJKh/pexels-monica-turlui-7218637-1.jpg" alt="Dish 3">
+          <img class="DRimg" src="https://i.ibb.co/wrXgnYy/pexels-alleksana-5949899-2.jpg" alt="Dish 4">
+          <img class="DRimg" src="https://i.ibb.co/s5Xx9fW/pexels-lina-kivaka-1841108-1.jpg" alt="Dish 5">
+        </div>
+      </div>
+      <ul class="dagensRetTekst controls">
+        <li class="DRdag"> Mandag<p>Ramen Noodles med kureret gris, blødkogte æg og tilhørende grøntsager.</p><button onclick="showSlide(0)" class="DRknap">Se retten</button></li>
+        <li class="DRdag"> Tirsdag<p>Kylling i Karry med ris og stegte grøntsager.</p><button onclick="showSlide(1)" class="DRknap">Se retten</button></li>
+        <li class="DRdag"> Onsdag<p>Spaghetti Bolognese med revet parmesan.</p><button onclick="showSlide(2)" class="DRknap">Se retten</button></li>
+        <li class="DRdag"> Torsdag<p>Klassisk Lasagne med italiensk brød.</p><button onclick="showSlide(3)" class="DRknap">Se retten</button></li>
+        <li class="DRdag"> Fredag<p>Burger med hjemmeskåret friturestegte fritter og grønt.</p><button onclick="showSlide(4)" class="DRknap">Se retten</button></li>
+      </ul>
+    </div>
+
+    <div class="salatBar">
+      <div class="salatBarKantTop"></div>
+      <img class="salatBarBlop" src="https://i.ibb.co/0fy5Nm7/graphic.png"></img>
+      <div class="salatBarTekst">
+        <h2>TA’ SELV SALATBAR - HVER DAG !</h2>
+        <p>Jespers Torvekøkken tilbyder en alsidig og fuldt fleksibel frokostordning, hvor du fra uge til uge selv kan skrue op og ned for antallet at kuverter.</p>
+      </div>
+      <img src="https://i.ibb.co/F8mCFpf/salat-graphic.png" class="salatBarImg"></img>
+      <div class="salatBarKantBund"></div>
+    </div>
+
+    <div class="sortiment">
+
+      SORTIMENT HER
+    </div>
+
+    <div class="omOs">
+      <div class="omOsTop"></div>
+      <div class="omOsTekst">
+        <h2>Om os</h2>
+        <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. </p>
+      </div>
+      <div class="omOsImgHolder">
+      <img src="https://i.ibb.co/6JwRXWs/01-person.jpg" class="omOsImg"></img>
+    </div>
+      <div class="omOsBund"></div>
+    </div>
+
+    <div class="kontaktOs container">
+      <img class="kontaktImg" src="https://i.ibb.co/N1HWHCN/03-person.jpg" alt="">
+      <div class="kontaktFormFlex">
+      <h3>Kontakt os</h3>
+      <p>Jespers Torvekøkken tilbyder en alsidig og fuldt fleksibel frokostordning, hvor du fra uge til uge selv kan skrue op og ned for antallet at kuverter.</p>
+      <form action="">
+        <input class="formInput" placeholder="Navn" name="navn" type="text">
+        <input class="formInput fit" placeholder="Email" name="email" type="text">
+        <textarea class="formInputMessage" name="message" placeholder="Hvad har du på hjerte?" type="text"></textarea>
+      </form>
+    </div>
+    </div>
+
+    <footer class="footer">
+<div class="footerKantTop"></div>
+<div class="footerIndhold">
+  <img src="https://i.ibb.co/q9LtHtq/jt-logo.png" style="width: 250px;" alt="">
+  <ul class="footerNav">
+    <a href=""><li>Dagens ret</li></a>
+    <a href=""><li>Menu</li></a>
+    <a href=""><li>Om os</li></a>
+    <a href=""><li>Kontakt</li></a>
+  </ul>
+  <div class="SoMeImg">
+    <img src="" alt="Linkedin">
+    <img src="" alt="Facebook">
+    <img src="" alt="Instagram">
+  </div>
+</div>
+    </footer>
+  </main>
   </body>
 </html>
